@@ -1,0 +1,565 @@
+.product {
+    margin-bottom: 83px;
+    @media screen and (min-width: $tablet) {
+        position: relative;
+        margin-bottom: 57px;
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        position: static;
+        padding-top: 25px;
+        margin-bottom: 67px;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $colorText;
+        font-family: $fontOswald;
+        text-transform: uppercase;
+        margin: 31px 0 21px;
+        padding-left: 38px;
+        letter-spacing: .7px;
+        line-height: 1.5;
+        @media screen and (min-width: $tablet) {
+            padding-left: 0;
+            margin: 37px 0 17px;
+            br {
+                display: none;
+            }
+         }
+         @media screen and (min-width: $desktop) {
+            float: right;
+            width: 44.3%;
+            min-height: 1px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+    }
+    &__content {
+        padding: 0 38px;
+        @media screen and (min-width: $tablet) {
+           float: right;
+           width: 45%;
+           padding: 0;
+        }
+        @media screen and (min-width: $desktop) {
+            max-width: 44.3%;
+        }
+    }
+    &__figure {
+        margin-bottom: 14px;
+        @media screen and (min-width: $tablet) {
+            float: left;
+           max-width: 330px;
+           margin-bottom: 0;
+         }
+         @media screen and (min-width: $desktop) {
+             max-width: 50%;
+         }
+    }
+    &__sku {
+        color: $colorGray2;
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-top: 0;
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 18px;
+        }
+    }
+    
+    &__prices {
+        margin-bottom: 6px;
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 22px;
+        }
+    }
+    &__price {
+        font-weight: 700;
+        display: inline-block;
+        font-size: 36px;
+        color: $colorBlack;
+        &_old {
+            text-decoration: line-through;
+        }
+        &_new {
+            color: $colorRed;
+        }
+        @media screen and (min-width: $desktop) {
+            font-size: 24px;
+        }
+    }
+    &__price + &__price {
+        padding-left: 15px;
+        @media screen and (min-width: $tablet) {
+           padding-left: 25px;
+         }
+         @media screen and (min-width: $desktop) {
+            padding-left: 21px;
+        }
+    }
+    &__rating {
+        margin-bottom: 30px;
+        padding-left: 0;
+        margin-top: 0;
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (min-width: $tablet) {
+            margin-bottom: 22px;
+        }
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 0;
+            display: inline-block;
+        }
+    }
+    &__rating-item {
+        color: $colorGray;
+        font-size: 23px;
+        float: left;
+        line-height: 18px;
+        @media screen and (min-width: $desktop) {
+            line-height: 16px;
+        }
+        &_filled {
+            color: $colorRed;
+        }
+    }
+    &__share {
+        font-size: 18px;
+        color: $colorBlue;
+        font-weight: 700;
+        cursor: pointer;
+        display: none;
+        @media screen and (min-width: $desktop) {
+            display: inline-block;
+            line-height: 16px;
+            vertical-align: baseline;
+            padding-left: 9px;
+        }
+    }
+    &__social{
+        @media screen and (min-width: $tablet) {
+            position: absolute;
+            left: 14px;
+            top: 53px;
+        }
+        @media screen and (min-width: $desktop) {
+            position: relative;
+            top: initial;
+            left: initial;
+        }
+        &-inner {
+            @media screen and (min-width: $desktop) {
+                position: absolute;
+                background-color: #fff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+                padding: 12px 15px 15px;
+                top: 15px;
+                left: 5px;
+                opacity: 0;
+                visibility: hidden;
+                z-index: -9;
+                transition: all .3s ease-in-out;
+                &::before {
+                    content: '';
+                    display: block;
+                    left: 50%;
+                    position: absolute;
+                    top: -14px;
+                    margin-left: -5px;
+                    z-index: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 8px 13.9px 8px;
+                    border-color: transparent transparent #ffffff transparent;
+                    -webkit-filter: drop-shadow(0px -1px 1px rgba(0,0,0,.75));
+                    filter: drop-shadow(0px -1px 1px rgba(0,0,0,.75));
+                }
+                &::after {
+                    content: '';
+                    display: block;
+                    left: 50%;
+                    position: absolute;
+                    top: -12px;
+                    margin-left: -5px;
+                    z-index: 1;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 8px 13.9px 8px;
+                    border-color: transparent transparent #ffffff transparent;
+                }
+                &.modal-open {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 9;
+                }
+            }
+        }
+        &-list {
+            padding-left: 0;
+            margin-bottom: 26px;
+            @media screen and (min-width: $tablet) {
+                margin-bottom: 0;
+            }
+            @media screen and (min-width: $desktop) {
+                margin-top: 14px;
+            }
+            
+        }
+        &-item {
+            display: inline-block;
+            margin-right: 11px;
+            @media screen and (min-width: $tablet) {
+                display: list-item;
+                margin-right: 0;
+                margin-bottom: 7px;
+            }
+            @media screen and (min-width: $desktop) {
+                display: inline-block;
+                margin-bottom: 0;
+
+            }
+        }
+        &-item + &-item {
+            @media screen and (min-width: $desktop) {
+                margin-left: 9px;
+
+            }
+        }
+    }
+    &__social-title {
+        font-size: 18px;
+        color: $colorBlue;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__social-close {
+        border: 0;
+        padding: 0;
+        background-color: #fff;
+        position: absolute;
+        right: 15px;
+        top: 14px;
+
+    }
+    &__details-title {
+        display: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $colorBlack;
+        margin-bottom: 7px;    
+        letter-spacing: .5px;
+        @media screen and (min-width: $tablet) {
+            display: block;
+            font-size: 14px;
+        }
+    }
+    &__details {
+        font-size: 14px;
+        color: $colorText;
+        margin-bottom: 36px;
+        line-height: 1.45;
+        padding-right: 5px;
+        letter-spacing: 0.4px;
+        word-spacing: 0.2px;
+        @media screen and (min-width: $tablet) {
+            margin-top: 0;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.35;
+            padding-right: 0;
+            letter-spacing: 0.3px;
+            margin-bottom: 30px;
+        }
+        @media screen and (min-width: $desktop) {
+            margin-top: 23px;
+            margin-bottom: 28px;
+        }
+    }
+    &__sizes {
+        margin-bottom: 20px;
+        @media screen and (min-width: $tablet) {
+           margin-bottom: 12px;
+         }
+         @media screen and (min-width: $desktop) {
+             margin-bottom: 17px;
+         }
+         
+    }
+    &__sizes-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $colorBlack;
+        margin-bottom: 15px;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 1.2px;
+        @media screen and (min-width: $tablet) {
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 11px;
+        }
+        @media screen and (min-width: $desktop){
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 0;
+        }
+    }
+    &__sizes-buttons {
+        text-align: center;
+        max-width: 238px;
+        margin: 0 auto;
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (min-width: $tablet) {
+           margin: 0;
+           max-width: 100%;
+        }
+        @media screen and (min-width: $desktop){
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px;
+        }
+    }
+    &__sizes-button {
+        width: 38px;
+        height: 38px;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        margin-bottom: 10px;
+        @media screen and (min-width: $desktop) {
+            width: 36px;
+            height: 36px;
+        }
+        &:not(:last-child) {
+            margin-right: 28px;
+            @media screen and (min-width: $tablet) {
+                margin-right: 23px;
+               
+             }
+             @media screen and (min-width: $desktop) {
+                 margin-right: 15px;
+             }
+        }
+        input {
+            position: absolute;
+            height: 0;
+            width: 0;
+        }
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border: 1px solid $colorBlack;
+            display: inline-block;
+            color: $colorBlack;
+            text-align: center;
+            vertical-align: middle;
+            text-transform: uppercase;
+            line-height: 38px;
+            font-size: 9px;
+            border-radius: 50%;
+        }
+    }
+    &__buy-btn {
+        font-size: 18px;
+        font-weight: 700;
+        color: $colorBlack;
+        text-transform: uppercase;
+        text-align: center;
+        border: 0;
+        padding: 0;
+        background-color: $colorGreen;
+        display: block;
+        width: 100%;
+        padding: 18px 0;
+        max-width: 280px;
+        margin: 0 auto;
+        border-radius: 30px;
+        @media screen and (min-width: $tablet) {
+            padding: 11px 0;
+            margin: 0;
+            max-width: 222px;
+        }
+        @media screen and (min-width: $tablet)  {
+            max-width: 212px;
+            font-size: 14px;
+            padding: 13px 0;
+        }
+    }
+}
+.product__sizes-button input:checked ~ span {
+    background-color: $colorBlack;
+    color: #fff;
+}
+.products {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @media screen and (min-width: $tablet) {
+        margin: 0 -15px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin: 0 -10px;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $colorBlack;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1.2px;
+        margin-bottom: 18px;
+        @media screen and (min-width: $tablet) {
+            font-size: 22px;
+            letter-spacing: 1.7px;
+            margin-left: -12px;
+            margin-bottom: 32px;
+        }
+        @media screen and (min-width: $desktop) {
+            margin-left: 0;
+            text-align: left;
+            padding-left: 15px;
+            margin-bottom: 16px;
+        }
+    }
+    &__container {
+        position: relative;
+        max-width: 265px;
+        margin: 0 auto;
+        @media screen and (min-width: $tablet)  {
+            max-width: 100%;
+        }
+    }
+    &__nav {
+        position: relative;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+    &__nav-arrow {
+        background-color: transparent;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 29px;
+        height: 50px;
+        position: absolute;
+        top: 107px;
+        &_prev {
+            left: 0;
+            
+        }
+        &_next {
+            right: 0;
+        }
+    }
+}
+.product-similar {
+    
+    max-width: 265px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    &.active {
+        z-index: 1;
+        opacity: 1;
+    }
+    @media screen and (min-width: $tablet) {
+        max-width: 50%;
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        padding: 0 15px;
+        margin-bottom: 37px;
+        position: static;
+        opacity: 1;
+    }
+    @media screen and (min-width: $desktop) {
+        max-width: 33.333%;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    &__figure {
+        position: relative;
+        @media screen and (min-width: $tablet) {
+            margin: 0 auto;
+            
+        }
+    }
+    &__img {
+        @media screen and (min-width: $tablet)  {
+            object-fit: cover;
+        }
+      
+    }
+    &__prices {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: $colorGreen;
+        filter: alpha(opacity=80);
+        background-color: rgba($color: $colorGreen, $alpha: .8);
+        @media screen and (min-width: $tablet)  {
+            padding: 3px 0;
+        }
+        @media screen and (min-width: $desktop) {
+            background-color: $colorGreen;
+            width: auto;
+            padding: 0;
+            bottom: 22px;
+            right: 0;
+            left: auto;
+        }
+    }
+    &__price {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        color: $colorBlack;
+        @media screen and (min-width: $tablet)  {
+            font-size: 22px;
+        }
+        @media screen and (min-width: $desktop) {
+            font-size: 16px;
+            padding: 2px 8px;
+        }
+        &_new {
+            color: $colorRed;
+        }
+        &_old {
+            display: none;
+            @media screen and (min-width: $desktop) {
+                display: inline-block;
+            }
+        }
+    }
+}
+.unactive {
+    display: none;
+}

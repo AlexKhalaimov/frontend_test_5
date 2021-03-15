@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+    &::after, &::before {
+        box-sizing: border-box;
+    }
+}
+body {
+    font-family: $fontSans;
+    margin: 0;
+}
+ul[class] {
+    list-style-type: none;
+}
+.container {
+    max-width: 935px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @media screen and (min-width: $tablet) {
+        padding: 0 38px;
+    }
+    @media screen and (min-width: $desktop) {
+        padding: 0 50px;
+    }
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+}
+.icon {
+    display: inline-block;
+}
+@include sprites($spritesheet-sprites);
+
+.desktop-hidden {
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
+}
+.mobile-hidden {
+    @media screen and (max-width: 933px) {
+        display: none;
+    }
+}
+.tablet-hidden {
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
