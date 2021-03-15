@@ -1,0 +1,6 @@
+@import 'global/_sprite';
+
+.icon {
+    display: inline-block;
+}
+@include sprites($spritesheet-sprites);

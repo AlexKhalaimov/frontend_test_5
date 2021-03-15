@@ -25,40 +25,41 @@ window.onload = function() {
                closeModal();
            } 
         });
+        if (window.innerWidth < 715) {
+
+            var navLeft = document.querySelector(".js-arrow-left");
+            var navRight = document.querySelector(".js-arrow-right");
+            var imgs = document.querySelectorAll('.product-similar');
+            var slideFirst = imgs[0];
+            var i = 0;
+
+            slideFirst.classList.add('active');
+            
+            navLeft.classList.add("unactive");
+
+            function slideLeft () {
+                imgs[i].classList.remove('active');
+            i--;
+            imgs[i].classList.add('active');
+            navRight.classList.remove("unactive");
+            if (i === 0) {
+                navLeft.classList.add("unactive");
+            }
+            };
+
+            function slideRight () {
+                imgs[i].classList.remove('active');
+            i++;
+            imgs[i].classList.add('active');
+            navLeft.classList.remove("unactive");
+            if (i === imgs.length - 1) {
+                navRight.classList.add("unactive");
+            }
+            };
+
+            navLeft.addEventListener("click", slideLeft);
+            navRight.addEventListener("click", slideRight);
+        }
     })()
   };
 
-var navLeft = document.querySelector(".js-arrow-left");
-var navRight = document.querySelector(".js-arrow-right");
-
-var imgs = document.querySelectorAll('.product-similar');
-var slideFirst = imgs[0];
-
-slideFirst.classList.add('active');
-
-var i = 0;
-
-navLeft.classList.add("unactive");
-
-slideLeft = () => {
-    imgs[i].classList.remove('active');
-  i--;
-  imgs[i].classList.add('active');
-  navRight.classList.remove("unactive");
-  if (i === 0) {
-    navLeft.classList.add("unactive");
-  }
-};
-
-slideRight = () => {
-    imgs[i].classList.remove('active');
-  i++;
-  imgs[i].classList.add('active');
-  navLeft.classList.remove("unactive");
-  if (i === imgs.length - 1) {
-    navRight.classList.add("unactive");
-  }
-};
-
-navLeft.addEventListener("click", slideLeft);
-navRight.addEventListener("click", slideRight);

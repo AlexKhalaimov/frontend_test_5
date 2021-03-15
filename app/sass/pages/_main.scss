@@ -33,7 +33,7 @@
          }
          @media screen and (min-width: $desktop) {
             float: right;
-            width: 44.3%;
+            width: 45.3%;
             min-height: 1px;
             position: relative;
             z-index: 1;
@@ -49,11 +49,11 @@
            padding: 0;
         }
         @media screen and (min-width: $desktop) {
-            max-width: 44.3%;
+            width: 45.5%;
         }
     }
     &__figure {
-        margin-bottom: 14px;
+        margin-bottom: 11px;
         @media screen and (min-width: $tablet) {
             float: left;
            max-width: 330px;
@@ -74,7 +74,10 @@
     }
     
     &__prices {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
+        @media screen and (min-width: $tablet) {
+            margin-bottom: 10px;
+        }
         @media screen and (min-width: $desktop) {
             margin-bottom: 22px;
         }
@@ -113,7 +116,7 @@
             clear: both;
         }
         @media screen and (min-width: $tablet) {
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
         @media screen and (min-width: $desktop) {
             margin-bottom: 0;
@@ -207,7 +210,7 @@
         }
         &-list {
             padding-left: 0;
-            margin-bottom: 26px;
+            margin-bottom: 28px;
             @media screen and (min-width: $tablet) {
                 margin-bottom: 0;
             }
@@ -218,7 +221,7 @@
         }
         &-item {
             display: inline-block;
-            margin-right: 11px;
+            margin-right: 9px;
             @media screen and (min-width: $tablet) {
                 display: list-item;
                 margin-right: 0;
@@ -228,6 +231,20 @@
                 display: inline-block;
                 margin-bottom: 0;
 
+            }
+        }
+        &-link {
+            color: $colorBlue;
+            border: 1px solid $colorBlue;
+            border-radius: 50%;
+            width: 41px;
+            height: 41px;
+            display: inline-block;
+            text-align: center;
+            &::before {
+                font-size: 25px;
+                vertical-align: middle;
+                line-height: 41px;
             }
         }
         &-item + &-item {
@@ -249,7 +266,24 @@
         background-color: #fff;
         position: absolute;
         right: 15px;
-        top: 14px;
+        top: 12px;
+        width: 20px;
+            height: 20px;
+            display: inline-block;
+            text-align: center;
+            color: $colorBlue;
+            cursor: pointer;
+            text-align: center;
+            &::before {
+                font-size: 26px;
+                vertical-align: middle;
+                line-height: 22px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -12px;
+                
+            }
 
     }
     &__details-title {
@@ -388,19 +422,25 @@
         background-color: $colorGreen;
         display: block;
         width: 100%;
-        padding: 18px 0;
+        padding: 14px 0;
         max-width: 280px;
         margin: 0 auto;
         border-radius: 30px;
+        cursor: pointer;
+        border: 2px solid $colorGreen;
+        transition: all .3s ease-in-out;
+        &:hover {
+            background-color: #fff;
+        }
         @media screen and (min-width: $tablet) {
-            padding: 11px 0;
+            padding:7px 0;
             margin: 0;
             max-width: 222px;
         }
         @media screen and (min-width: $tablet)  {
             max-width: 212px;
             font-size: 14px;
-            padding: 13px 0;
+            padding: 11px 0;
         }
     }
 }
@@ -464,12 +504,29 @@
         height: 50px;
         position: absolute;
         top: 107px;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-color: $colorGray;
+            border-style: solid;
+        }
         &_prev {
             left: 0;
+            &::before {
+                border-width: 3px 0 0 3px;
+                transform: rotate(-45deg) translate(3px, 6px);
+            }
             
         }
         &_next {
             right: 0;
+             
+             &::before  {
+                border-width: 3px 3px 0 0;
+                transform: rotate(45deg) translate(-5px, 8px);
+             }
         }
     }
 }
@@ -494,7 +551,7 @@
         float: left;
         width: 50%;
         padding: 0 15px;
-        margin-bottom: 37px;
+        margin-bottom: 30px;
         position: static;
         opacity: 1;
     }
